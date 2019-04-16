@@ -3,12 +3,10 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
+  // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
   this.step();
   this.setPosition(top, left);
-  // use jQuery to create an HTML <span> tag
-
-
   //invokes dancer's step function
 
 
