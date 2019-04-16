@@ -24,7 +24,32 @@ $(document).ready(function() {
       $("body").width() * Math.random(),  
       Math.random() * 1000                 
     );
+
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $('.winterButton').on('click', function(event) {
+    //top right and left
+    var top = 50;
+    var left = $("body").width() / 4;
+    //locate dancer array 
+     for (var i = 0; i < window.dancers.length; i++) {
+       var dancer = window.dancers[i];
+        dancer.setPosition(top, left);
+        top = top + 50;
+     }  
+  });
+
+  $('.goBack').on('click', function(event) {
+     for (var i = 0; i < window.dancers.length; i++) {
+       var dancer = window.dancers[i];
+        dancer.setPosition(
+          $("body").height() * Math.random(), 
+          $("body").width() * Math.random(),  
+          Math.random() * 1000                 
+        );
+     }  
   });
 });
 
