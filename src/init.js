@@ -22,24 +22,46 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(), 
       $("body").width() * Math.random(),  
-      Math.random() * 1000                 
+      Math.random() * 1500                 
     );
-
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+    console.log(window.dancers);
+    initializeMouseover(); 
   });
+  // $('.winterButton').on('click', function(event) {
+  //   //top right and left
+    
+  // });
 
-  $('.winterButton').on('click', function(event) {
+  //lineup
+  $('.lineupButton').on('click', function(event) {
     //top right and left
     var top = 50;
-    var left = $("body").width() / 4;
+    var top1 = 50;
     //locate dancer array 
      for (var i = 0; i < window.dancers.length; i++) {
        var dancer = window.dancers[i];
-        dancer.setPosition(top, left);
-        top = top + 50;
+       
+       if (dancer.whiteWalker) {
+        dancer.setPosition(top, 1500);
+         top = top + 50;
+       } else {
+        dancer.setPosition(top1, 200);
+        top1 = top1 + 50;
+       }
      }  
   });
+
+  var initializeMouseover = function () {
+   $('.walker').mouseover(function() {
+    var color = $(this).css("filter");
+     
+    $(this).css("filter", "sepia(100%) hue-rotate(190deg) saturate(500%)");
+    console.log("test");
+  }); 
+ }
+  
 
   $('.goBack').on('click', function(event) {
      for (var i = 0; i < window.dancers.length; i++) {

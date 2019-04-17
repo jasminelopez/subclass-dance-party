@@ -3,25 +3,93 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background: url('images/GOTbg.png');
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .winterButton, .goBack, .lineupButton {
   padding:5px 12px;
-  float:right;
 }
 .topbar{
   height:32px;
   background-color: #555;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
   border-radius:10px;
   position:absolute;
 }
+
+.twirly {
+  animation-name: twirly;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  /* width: 120px;
+  height: 120px; */
+}
+
+@-webkit-keyframes twirly {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 125% 125%;
+    transform-origin: 125% 125%;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform-origin: 125% 125%;
+    transform-origin: 125% 125%;
+  }
+}
+
+.sliding {
+  position: absolute;
+  left: 0;
+  /* width: 250px; */
+  /* height: 180px; */
+  display: block;
+	top: 0;
+  
+  x-transition: all 1s ease-in-out;
+  animation: ani 1.7s infinite;
+}
+
+@keyframes ani {
+  0% {
+    left: 400px;
+  }
+  50% {
+    left: 1000px;
+  }
+  100% {
+    left: 400px;
+  }
+}
+
+.walker {
+  animation-name: pulse_animation;
+  animation-duration: 5000ms;
+  transform-origin:70% 70%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse_animation {
+  0% { transform: scale(1); }
+  30% { transform: scale(1); }
+  40% { transform: scale(1.08); }
+  50% { transform: scale(1); }
+  60% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  80% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+

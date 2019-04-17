@@ -2,7 +2,7 @@ var MakeTwirlyDancer = function(top, left, timeBetweenSteps) {
  
   MakeDancer.call(this, top, left, timeBetweenSteps); //inheriting the MakeDancer
   //overriding span node 
-  this.$node = $('<img src="images/kitten-transparent-medieval-1.png" class="dancer twirly" width="250" height="250">');
+  this.$node = $('<img src="images/kitten-transparent-medieval-1.png" class="dancer twirly" width="180">');
   this.setPosition(top, left);
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
