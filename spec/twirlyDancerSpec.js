@@ -11,7 +11,7 @@ describe('twirlyDancer', function() {
   it('should have a jQuery $node object', function() {
     expect(twirlyDancer.$node).to.be.an.instanceof(jQuery);
   });
-  
+
   describe('dance', function() {
     it('should call step at least once per second', function() {
       sinon.spy(twirlyDancer, 'step');
